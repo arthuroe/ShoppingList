@@ -1,178 +1,144 @@
 @font-face {
-    font-family: 'opensans';
-    src: url('fonts/opensans-regular-webfont.eot');
-    src: url('fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/opensans-regular-webfont.woff') format('woff'),
-         url('fonts/opensans-regular-webfont.ttf') format('truetype'),
-         url('fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
+  font-family: 'opensans';
+  src: url("fonts/opensans-regular-webfont.eot");
+  src: url("fonts/opensans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/opensans-regular-webfont.woff") format("woff"), url("fonts/opensans-regular-webfont.ttf") format("truetype"), url("fonts/opensans-regular-webfont.svg#open_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 @font-face {
-    font-family: 'opensans-semibold';
-    src: url('fonts/opensans-semibold-webfont.eot');
-    src: url('fonts/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/opensans-semibold-webfont.woff') format('woff'),
-         url('fonts/opensans-semibold-webfont.ttf') format('truetype'),
-         url('fonts/opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
+  font-family: 'opensans-semibold';
+  src: url("fonts/opensans-semibold-webfont.eot");
+  src: url("fonts/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/opensans-semibold-webfont.woff") format("woff"), url("fonts/opensans-semibold-webfont.ttf") format("truetype"), url("fonts/opensans-semibold-webfont.svg#open_sanssemibold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 @font-face {
-    font-family: 'opensans-extrabold';
-    src: url('fonts/opensans-extrabold-webfont.eot');
-    src: url('fonts/opensans-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/opensans-extrabold-webfont.woff') format('woff'),
-         url('fonts/opensans-extrabold-webfont.ttf') format('truetype'),
-         url('fonts/opensans-extrabold-webfont.svg#open_sansextrabold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+  font-family: 'opensans-extrabold';
+  src: url("fonts/opensans-extrabold-webfont.eot");
+  src: url("fonts/opensans-extrabold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/opensans-extrabold-webfont.woff") format("woff"), url("fonts/opensans-extrabold-webfont.ttf") format("truetype"), url("fonts/opensans-extrabold-webfont.svg#open_sansextrabold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+* {
+  margin: 0;
+  padding: 0; }
 
-*{
-    margin: 0;
-    padding: 0;
-}
+h1 {
+  font-family: opensans-extrabold;
+  color: #fff; }
 
-h1{
-    font-family: opensans-extrabold;
-}
+h2 {
+  margin: 2px 10px;
+  font-family: opensans-semibold; }
 
-h2{
-    margin: 2px 10px;
-    font-family: opensans-semibold;
-}
+p {
+  margin: 5px 8px;
+  line-height: 20px;
+  font-family: opensans;
+  font-size: 80%; }
 
-p{
-    margin: 5px 8px;
-    line-height: 20px;
-    font-family: opensans;
-    font-size: 80%;
-}
+a {
+  text-decoration: none; }
 
-a{
-    text-decoration: none;
-}
+#center, header {
+  width: 980px;
+  margin: 0 auto; }
 
-#center{
-    width: 980px;
-    margin: 0 auto;
-}
+.header-wrapper {
+  background: #8492A6; }
 
-header{
-    clear: both;
-    overflow: auto;
-    padding: 25px 0;
-}
+header {
+  clear: both;
+  overflow: auto;
+  padding: 10px 0; }
 
-header .left{
-    width:40%;
-    float: left;
-}
-
-header .right{
-    width: 60%;
-    float: right
-}
-
-header .right ul{
-    text-align: center;
-}
-
-header .right ul li{
+header .left {
+  width: 40%;
+  float: left; }
+header .right {
+  width: 60%;
+  float: right; }
+header .right ul {
+  text-align: center; }
+  header .right ul li {
     display: inline-block;
-    margin-right: 25px;
-}
+    margin-right: 25px; }
+    header .right ul li a {
+      color: #1fb6ff; }
 
-header .right ul li a{
-color: #1fb6ff;
-}
+#content {
+  clear: both;
+  background: url(../images/list.png) no-repeat right;
+  background-position: 512px 0px;
+  height: 522px;
+  padding: 20px 0;
+  box-shadow: 0px 0px 8px #cacaca; }
 
-#content{
-    clear: both;
-    background: url(../images/list.png) no-repeat right;
-    height: 640px;
-    background-position: 512px 0px;
-}
+#content-item {
+  background: url(../images/list-item.png) no-repeat right;
+  background-position: 512px 0px;
+  height: 522px;
+  padding: 20px 0;
+  box-shadow: 0px 0px 8px #cacaca; }
 
-#content-item{
-    clear: both;
-    background: url(../images/list-item.png) no-repeat right;
-    height: 640px;
-    background-position: 512px 0px;
-}
+#content-item .list, #content .list {
+  padding-left: 50px;
+  padding-top: 15px; }
+  #content-item .list li, #content .list li {
+    margin: 8px 0; }
+    #content-item .list li a, #content .list li a {
+      color: #8492A6;
+      font-family: opensans;
+      font-size: 96%; }
 
-#content-item .list{
-    padding-left: 50px;
-    padding-top: 15px;
-}
+.form-wrapper {
+  background: url(../images/cart.jpg) no-repeat center;
+  height: 640px; }
 
-#content-item .list li{
-    margin: 8px 0;
-}
-
-#content-item .list li a{
-    color: #8492A6;
-    font-family: opensans;
-    font-size: 96%;
-}
-
-.form-wrapper{
-    background: url(../images/cart.jpg) no-repeat center;
-    height: 640px;
-}
-#login,#signup{
-    width: 70%;
-    margin: 0 auto;
-    border: 25px solid #8492A6;
-    border-radius: 20px;
-    padding: 35px 10px;
-    background: #fff;
-    position: relative;
-    top: 140px;
-}
-
-#login h2, #login p ,#signup h2,#signup p{
-    text-align: center;
-}
-
-#login p a{
-    color: #1fb6ff;
-}
-
-#login input, #signup input{
+#login, #signup {
+  width: 70%;
+  margin: 0 auto;
+  border: 25px solid #8492A6;
+  border-radius: 20px;
+  padding: 35px 10px;
+  background: #fff;
+  position: relative;
+  top: 140px; }
+  #login h2, #login p, #signup h2, #signup p {
+    text-align: center; }
+  #login a, #signup a {
+    color: #1fb6ff; }
+  #login input, #signup input {
     padding: 10px 8px;
     width: 200px;
     border: 1px solid #8492A6;
     border-radius: 5px;
     margin-left: 11px;
     color: #fff;
-    margin-top: 18px;
-}
-
-#login #btn{
+    margin-top: 18px; }
+  #login #btn, #signup #btn {
     border: 1px solid #8492A6;
-    background: #47525E;
-}
+    background: #47525E; }
 
-#signup{
-    width: 42%;
-    margin-bottom: 18px;
-    margin-top: 5px;
-    top: 72px;
-    left: 48px;
-}
-
-#signup input{
+#signup {
+  width: 42%;
+  margin-bottom: 18px;
+  margin-top: 5px;
+  top: 72px;
+  left: 48px; }
+  #signup input {
     width: 200px;
     margin-bottom: 18px;
     margin-top: 5px;
     display: block;
-    margin: 20px auto;
-}
+    margin: 20px auto; }
+  #signup #btn {
+    background: #47525E; }
 
-#signup #btn{
-    background: #47525E;
-}
+footer {
+  padding: 10px 0;
+  background: #47525E; }
+  footer .text-center p {
+    text-align: center;
+    color: #fff; }
+    footer .text-center p a {
+      color: #fff; }
+
+/*# sourceMappingURL=style.css.map */
