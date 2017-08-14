@@ -148,6 +148,23 @@ header{
     }
 }
 
+.add{
+    p{
+            margin-left: 40px;
+        width: 100px;
+        text-align: center;
+        padding: 5px;
+        background: #47525E;
+        margin-top: 26px;
+        a{
+            color: #fff;
+            &:hover{
+                        color: #1fb6ff;
+                    }
+        }
+    }
+}
+
 .form-wrapper{
     background: url(../images/cart.jpg) no-repeat center;
     height: 640px;
