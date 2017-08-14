@@ -92,8 +92,14 @@ header{
             li{
                 display: inline-block;
                 margin-right: 25px;
+                padding: 13px 0;
+                font-family: opensans;
+                font-size: 86%;
                 a{
-                    color: #1fb6ff;
+                    color: #fff;
+                    &:hover{
+                        color: #1fb6ff;
+                    }
                 }
             }
         }
@@ -111,7 +117,7 @@ header{
 
 #content-item{
     background: url(../images/list-item.png) no-repeat right;
-    background-position: 512px 0px;
+    background-position: 510px 62px;
     height: 522px;
     padding: 20px 0;
     box-shadow: 0px 0px 8px #cacaca;
@@ -121,12 +127,22 @@ header{
     .list{
         padding-left: 50px;
         padding-top: 15px;
+        list-style: none;
             li{
                 margin: 8px 0;
+                &:before {
+                    content: "•"; 
+                    color: #47525E;
+                    position: relative;
+                    left: -10px;
+                }
                 a{
                     color: #8492A6;
                     font-family: opensans;
                     font-size: 96%;
+                    &:hover{
+                        color: #1fb6ff;
+                    }
                 }
             }
     }
