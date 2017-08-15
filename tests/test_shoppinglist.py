@@ -41,3 +41,4 @@ class ShopTestCase(unittest.TestCase):
         self.user.shopping_list = {'shoes': ['flats', 'highs'], 'grocery': ['onions', 'tomatoes']}
         self.assertEqual(self.user.delete_shopping_list('shoes', 'flats'), {
                          'shoes': ['highs'], 'grocery': ['onions', 'tomatoes']})
+
