@@ -13,7 +13,7 @@ The shopping list app is an application that allows users to record and share th
 
 ## Create a virtualenv, and activate it:
 
-$ python3 -m venv shop
+$ python3 -m venv shop   
 $ source shop/bin/activate
 
 ## After, install all necessary to run:
