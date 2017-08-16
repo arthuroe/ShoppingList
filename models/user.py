@@ -1,5 +1,7 @@
-from shopping_list import ShoppingList
-from list_item import ListItem
+import sys
+
+
+sys.path.append('..')
 
 
 class User(object):
@@ -13,9 +15,9 @@ class User(object):
         '''
         items = list(items)
         if name not in self.shopping_lists.keys():
-            shop_list = ShoppingList(name, items)
-            for item in items:
-                new_item = ListItem(item)
+            #shop_list = ShoppingList(name, items)
+            #for item in items:
+                #new_item = ListItem(item)
             self.shopping_lists[name] = [item for item in items]
         elif name in self.shopping_lists.keys():
             return 'Shopping List already exists!'

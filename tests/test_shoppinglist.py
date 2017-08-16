@@ -1,5 +1,8 @@
 import unittest
+import sys
 from models.user import User
+sys.path.append('/home/arthur/Desktop/ShoppingList/shop/bin/python')
+
 
 
 class ShopTestCase(unittest.TestCase):

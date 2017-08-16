@@ -1,5 +1,6 @@
-from list_item import ListItem
+import sys
 
+sys.path.append('..')
 
 class ShoppingList(object):
     def __init__(self, name, items):

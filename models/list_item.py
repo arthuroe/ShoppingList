@@ -1,3 +1,6 @@
+import sys
+sys.path.append('..')
+
 class ListItem(object):
     def __init__(self, name):
         self.name = name
