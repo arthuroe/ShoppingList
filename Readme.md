@@ -1,6 +1,6 @@
 ## SHOPPING LIST
 
-The shopping list app is an application that allows users to record and share things they want to spend money on, hence meeting the needs of keeping track of their shopping lists.
+The shopping list is an application that allows users to record and share things they want to spend money on, hence meeting the needs of keeping track of their shopping lists.
 
 ## Functions
 
@@ -20,5 +20,9 @@ $ source shop/bin/activate
 
 $ pip install -r requirements.txt
 
-## Run test cases
-Move to tests folder and run ' py.test ' to run the tests against the CRUD functionality
+## To run the application
+Run python app.y
+
+## To see your application, access this url in your browser:
+
+http://localhost:5000
