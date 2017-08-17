@@ -21,7 +21,7 @@
         <h2>Your Shopping Lists</h2>
 				<ul class="list">
 				{% for item in lists.keys()%}
-					<li><a class="item" href="/item/{{ item }}">{{ item }}</a><a class="side" href="#">edit</a><a class="side" href="/delete_list/{{ item }}">delete</a></li>
+					<li><a class="item" href="/item/{{ item }}">{{ item }}</a><a class="side" href="/update_list">edit</a><a class="side" href="/delete_list/{{ item }}">delete</a></li>
 				{% endfor %}
 			</ul>
         <div class="add">
