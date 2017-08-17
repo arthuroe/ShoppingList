@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/arthuroe/ShoppingList.svg?branch=master)](https://travis-ci.org/arthuroe/ShoppingList)
 
+[![Coverage Status](https://coveralls.io/repos/github/arthuroe/ShoppingList/badge.svg?branch=master)](https://coveralls.io/github/arthuroe/ShoppingList?branch=master)
+
 ## SHOPPING LIST
 
 The shopping list is an application that allows users to record and share things they want to spend money on, hence meeting the needs of keeping track of their shopping lists.
