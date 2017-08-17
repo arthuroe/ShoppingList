@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/arthuroe/ShoppingList.svg?branch=master)](https://travis-ci.org/arthuroe/ShoppingList)
+
 ## SHOPPING LIST
 
 The shopping list is an application that allows users to record and share things they want to spend money on, hence meeting the needs of keeping track of their shopping lists.
