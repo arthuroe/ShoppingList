@@ -11,12 +11,18 @@ user = User()
 
 @app.route('/index')
 def index():
+    """"
+    Route to main page after login
+    """
     lists = user.shopping_lists
     return render_template('index.html', lists=lists)
 
 
 @app.route('/signup', methods=['GET', 'POST'])
 def register():
+    """"
+    Route to enable user register on the site
+    """
     error = None
     if request.method == 'POST':
         name = request.form['name']
@@ -32,6 +38,9 @@ def register():
 
 @app.route('/add_list', methods=['GET', 'POST'])
 def add_list():
+    """"
+    Route enables user to add shopping_lists
+    """
     error = None
     if request.method == 'POST':
         list_name = request.form['list_name']
@@ -46,6 +55,9 @@ def add_list():
 
 @app.route('/add_item', methods=['GET', 'POST'])
 def add_item():
+    """"
+    Route enables user to add shopping_list item
+    """
     error = None
     if request.method == 'POST':
         list_name = request.form['list_name']
@@ -71,6 +83,9 @@ def login_required(test):
 
 @app.route('/logout')
 def logout():
+    """"
+    Route logs out user from the site
+    """
     session.pop('logged_in', None)
     flash('You Were Logged Out !')
     return redirect(url_for('login'))
@@ -85,6 +100,9 @@ def item(list_name):
 
 @app.route('/delete/<list_name>/<item_name>')
 def delete(list_name, item_name):
+    """"
+    Route enables user to delete shopping list item
+    """
     user.delete_shopping_list_item(list_name, item_name)
     return redirect(url_for('item', list_name=list_name))
     return render_template('item.html')
@@ -92,13 +110,19 @@ def delete(list_name, item_name):
 
 @app.route('/delete_list/<list_name>')
 def delete_list(list_name):
+    """"
+    Route enables user to delete shopping list
+    """
     user.delete_shopping_list(list_name)
     return redirect(url_for('index'))
     return render_template('index.html')
 
 
-@app.route('/update_list/<list_name>')
-def update_list(list_name):
+@app.route('/updatelist', methods=['GET', 'POST'])
+def updatelist():
+    """"
+    Route enables user to edit shopping list
+    """
     error = None
     if request.method == 'POST':
         list_name = request.form['list_name']
@@ -108,11 +132,14 @@ def update_list(list_name):
         if list_name and new_name:
             user.update_shopping_list(list_name)
             return redirect(url_for('index'))
-    return render_template('index.html')
+    return render_template('updatelist.html')
 
 
-@app.route('/update_list_item/<list_name>/<item_name>')
-def update_list_item(list_name, item_name):
+@app.route('/updatelistitem', methods=['GET', 'POST'])
+def updatelistitem():
+    """"
+    Route enables user to edit shopping list item
+    """
     error = None
     if request.method == 'POST':
         list_name = request.form['list_name']
@@ -123,12 +150,15 @@ def update_list_item(list_name, item_name):
         if list_name and item_name and new_name:
             user.user.update_shopping_list_item(list_name, item_name, new_name)
             return redirect(url_for('item', list_name=list_name))
-    return render_template('index.html')
+    return render_template('updatelistitem.html')
 
 
 @app.route('/')
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    """"
+    Route enables user to login after registration
+    """
     error = None
     if request.method == 'POST':
         if request.form['email'] not in users.keys() or request.form['password'] not in users.values():
