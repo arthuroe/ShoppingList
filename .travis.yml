@@ -1,20 +1,20 @@
-language: python
+language: 
+- python
+
+cache:
+- pip
 
 python:
-
- - 3.6.1
-
-cache: pip
-
+- "3.5"
 
 install:
-  - pip install coveralls
-  - pip install coverage
-  - pip install flask
-
+- pip install coverage
+- pip install coveralls
+- pip install -r requirements.txt
 
 script:
-  - nosetests test_shoppinglist.py
+- nosetests tests/tests.py
 
 after_success:
-  - coveralls
+- coverage report
+- coveralls
