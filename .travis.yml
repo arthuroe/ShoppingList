@@ -14,7 +14,7 @@ install:
 
 
 script:
-  - nosetests --with-coverage --cover-package=app
+  - nosetests test_shoppinglist.py
 
 after_success:
   - coveralls
