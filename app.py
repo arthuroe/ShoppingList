@@ -144,13 +144,13 @@ def updatelistitem():
     if request.method == 'POST':
         list_name = request.form['list_name']
         item_name = request.form['item_name']
-        new_name = request.form['new_name']
+        new_name = request.form['new_item_name']
         flash("You have succesfully added registered {} {} {}".format(list_name, item_name, new_name))
 
-        if list_name and item_name and new_name:
+        if list_name and item_name:
             user.update_shopping_list_item(list_name, item_name, new_name)
-            return redirect(url_for('item'))
-    return render_template('updatelistitem.html')
+            return redirect(url_for('item', list_name=list_name))
+    return render_template('updatelistitem.html', error=error)
 
 
 @app.route('/')
