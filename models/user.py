@@ -15,9 +15,6 @@ class User(object):
         '''
         items = list(items)
         if name not in self.shopping_lists.keys():
-            #shop_list = ShoppingList(name, items)
-            #for item in items:
-                #new_item = ListItem(item)
             self.shopping_lists[name] = [item for item in items]
         elif name in self.shopping_lists.keys():
             return 'Shopping List already exists!'
@@ -37,7 +34,6 @@ class User(object):
         creates shopping list name
         '''
         if list_name in self.shopping_lists.keys():
-            # new_name = ShoppingList.name
             self.shopping_lists[new_name] = self.shopping_lists.pop(list_name)
         else:
             return "list name does not exist here"
