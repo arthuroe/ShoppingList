@@ -4,7 +4,7 @@ from models.user import User
 
 app = Flask(__name__)
 
-app.secret_key = 'elgordo123456789'
+app.secret_key = 'cronical1234genie67!'
 users = {'admin': 'admin', 'art': 'art'}
 user = User()
 
@@ -77,7 +77,7 @@ def login_required(test):
             return test(*args, **kwargs)
         else:
             flash("You need to login first.")
-            return redirect(url_for('log'))
+            return redirect(url_for('login'))
     return wrap
 
 
@@ -130,7 +130,7 @@ def updatelist():
         flash("You have succesfully added registered {} {}".format(list_name, new_name))
 
         if list_name and new_name:
-            user.update_shopping_list(list_name)
+            user.update_shopping_list(list_name, new_name)
             return redirect(url_for('index'))
     return render_template('updatelist.html')
 
@@ -148,8 +148,8 @@ def updatelistitem():
         flash("You have succesfully added registered {} {} {}".format(list_name, item_name, new_name))
 
         if list_name and item_name and new_name:
-            user.user.update_shopping_list_item(list_name, item_name, new_name)
-            return redirect(url_for('item', list_name=list_name))
+            user.update_shopping_list_item(list_name, item_name, new_name)
+            return redirect(url_for('item'))
     return render_template('updatelistitem.html')
 
 
