@@ -34,6 +34,7 @@ http://localhost:5000
 ## USAGE
 $ first sign up to create account(for current version do not include characters in the email for login), then login.   
 $ Add a list with an item.   
-$ Click on the list to view items, and add more items if you wish.  
-$ delete shopping list item from delete option and list item  
+$ Click on the list to view items, and add more items if you wish.
+$ Click on the edit option to edit items or list.
+$ delete shopping list item from delete option and list item.  
 $ Once you logout session is terminated and data is lost, hence you have to create new account  
