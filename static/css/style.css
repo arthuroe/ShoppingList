@@ -126,12 +126,13 @@ header .right ul {
 #login, #signup {
   width: 70%;
   margin: 0 auto;
-  border: 25px solid #8492A6;
+  border: 0px solid #8492A6;
   border-radius: 20px;
   padding: 35px 10px;
   background: #fff;
   position: relative;
-  top: 140px; }
+  top: 140px;
+  box-shadow: 0px 0px 9px #000; }
   #login h2, #login p, #signup h2, #signup p {
     text-align: center; }
   #login a, #signup a {
@@ -186,6 +187,9 @@ header .right ul {
   .side:hover {
     color: red !important;
     text-decoration: underline; }
+
+.error {
+  color: red; }
 
 footer {
   padding: 10px 0;
