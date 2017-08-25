@@ -19,10 +19,13 @@ class ShopTestCase(unittest.TestCase):
         new_room_count = len(self.user.shopping_lists)
         self.assertEqual(new_room_count - initial_room_count, 1)
 
+    def test_create_shopping_list(self):
+        self.user.shopping_lists = {}
+        self.assertEqual(self.user.create_shopping_list('shoes', 'flats'),{'shoes': ['flats']})
+
     def test_create_shopping_list_when_list_already_exists(self):
         self.user.shopping_lists = {'Shoes': ['flats']}
-        self.assertEqual(self.user.create_shopping_list('Shoes', 'flats'),
-                         'Shopping List already exists!', msg='Shopping List already exists!')
+        self.assertEqual(self.user.create_shopping_list('Shoes', 'flats'),'Shopping List already exists!', msg='Shopping List already exists!')
 
     def test_update_shopping_list(self):
         self.user.shopping_lists = {'shoes': ['flats']}
