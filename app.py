@@ -5,11 +5,23 @@ from models.user import User
 app = Flask(__name__)
 
 app.secret_key = 'cronical1234genie67!'
-users = {'admin': 'admin', 'art': 'art'}
+users = {}
 user = User()
 
 
+def login_required(test):
+    @wraps(test)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return test(*args, **kwargs)
+        else:
+            flash("You need to login first.")
+            return redirect(url_for('login'))
+    return wrap
+
+
 @app.route('/index')
+@login_required
 def index():
     """"
     Route to main page after login
@@ -31,12 +43,13 @@ def register():
         flash("You have succesfully been registered {} {}".format(name, password))
 
         if name and password:
-            users[name] = password
+            users[email] = password
             return redirect(url_for('login'))
     return render_template('signup.html', error=error)
 
 
 @app.route('/add_list', methods=['GET', 'POST'])
+@login_required
 def add_list():
     """"
     Route enables user to add shopping_lists
@@ -53,8 +66,9 @@ def add_list():
     return render_template('add_list.html', error=error)
 
 
-@app.route('/add_item', methods=['GET', 'POST'])
-def add_item():
+@app.route('/add_item/<list_name>', methods=['GET', 'POST'])
+@login_required
+def add_item(list_name):
     """"
     Route enables user to add shopping_list item
     """
@@ -67,18 +81,7 @@ def add_item():
         if list_name and items:
             user.add_shopping_list_item(list_name, items)
             return redirect(url_for('item', list_name=list_name))
-    return render_template('add_list.html', error=error)
-
-
-def login_required(test):
-    @wraps(test)
-    def wrap(*args, **kwargs):
-        if 'logged_in' in session:
-            return test(*args, **kwargs)
-        else:
-            flash("You need to login first.")
-            return redirect(url_for('login'))
-    return wrap
+    return render_template('add_item.html', list_name=list_name, error=error)
 
 
 @app.route('/logout')
@@ -99,6 +102,7 @@ def item(list_name):
 
 
 @app.route('/delete/<list_name>/<item_name>')
+@login_required
 def delete(list_name, item_name):
     """"
     Route enables user to delete shopping list item
@@ -109,6 +113,7 @@ def delete(list_name, item_name):
 
 
 @app.route('/delete_list/<list_name>')
+@login_required
 def delete_list(list_name):
     """"
     Route enables user to delete shopping list
@@ -118,12 +123,13 @@ def delete_list(list_name):
     return render_template('index.html')
 
 
-@app.route('/updatelist', methods=['GET', 'POST'])
-def updatelist():
+@app.route('/updatelist/<list_name>', methods=['GET', 'POST'])
+@login_required
+def updatelist(list_name):
     """"
     Route enables user to edit shopping list
     """
-    error = None
+    error = None	
     if request.method == 'POST':
         list_name = request.form['list_name']
         new_name = request.form['new_name']
@@ -131,12 +137,13 @@ def updatelist():
 
         if list_name and new_name:
             user.update_shopping_list(list_name, new_name)
-            return redirect(url_for('index'))
-    return render_template('updatelist.html')
+            return redirect(url_for('index',list_name=list_name))
+    return render_template('updatelist.html',list_name=list_name)
 
 
-@app.route('/updatelistitem', methods=['GET', 'POST'])
-def updatelistitem():
+@app.route('/updatelistitem/<list_name>/<item_name>', methods=['GET', 'POST'])
+@login_required
+def updatelistitem(list_name, item_name):
     """"
     Route enables user to edit shopping list item
     """
@@ -149,8 +156,8 @@ def updatelistitem():
 
         if list_name and item_name:
             user.update_shopping_list_item(list_name, item_name, new_name)
-            return redirect(url_for('item', list_name=list_name))
-    return render_template('updatelistitem.html', error=error)
+            return redirect(url_for('item', list_name=list_name, item_name=item_name))
+    return render_template('updatelistitem.html', list_name=list_name, item_name=item_name)
 
 
 @app.route('/')
