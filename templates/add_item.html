@@ -10,7 +10,7 @@
         <div class="left"><h1>SHOPPING LIST</h1></div>
             <div class="right">
                 <ul>
-                    <li><a href="#">Welcome : {% if session.logged_in %}Greetings {{request.form['email']}}{% endif %}Arthur</a></li>
+                    <li><a href="#">Welcome</a></li>
                     <li><a href="/logout">Logout</a></li>
                 </ul>
         </div>
@@ -24,6 +24,7 @@
 					<p class=error><strong>Error:</strong>{{ error }}</p>
 					{% endif %}
 						<p>Back to lists<a href="/index"> Click here</a></p>
+						<input type="text" name='list_name' placeholder="list name" value="{{list_name}}" readonly="readonly"/>
 						<input type="text" name='items' placeholder="items"/>
 						<input id="btn" type="submit" value="add"/>
 				</form>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>SHOPPING LIST</title>
-	<link href="../static/css/style.css" rel="stylesheet">
+	<link href="../../static/css/style.css" rel="stylesheet">
 </head>
 <body>
     <div class="header-wrapper"><header id="navigation">
@@ -24,10 +24,10 @@
 					<p class=error><strong>Error:</strong>{{ error }}</p>
 					{% endif %}
 						<p>Back to lists<a href="/index"> Click here</a></p>
-						<input type="text" name='list_name' placeholder="list name"/>
-						<input type="text" name='item_name' placeholder="item name"/>
+						<input type="text" name='list_name' placeholder="list name" value="{{list_name}}" readonly="readonly"/>
+						<input type="text" name='item_name' placeholder="item name"value="{{item_name}}" readonly="readonly"/>
 						<input type="text" name='new_item_name' placeholder="new item name"/>
-						<input id="btn" type="submit" value="add"/>
+						<input id="btn" type="submit" value="update"/>
 				</form>
 </section>
     </div>

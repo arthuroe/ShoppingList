@@ -24,9 +24,9 @@
 					<p class=error><strong>Error:</strong>{{ error }}</p>
 					{% endif %}
 						<p>Back to lists<a href="/index"> Click here</a></p>
-						<input type="text" name='list_name' placeholder="list name"/>
+						<input type="text" name='list_name' placeholder="list name" value="{{list_name}}" readonly="readonly"/>
 						<input type="text" name='new_name' placeholder="new_name"/>
-						<input id="btn" type="submit" value="add"/>
+						<input id="btn" type="submit" value="update"/>
 				</form>
 </section>
     </div>

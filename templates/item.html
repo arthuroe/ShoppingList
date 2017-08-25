@@ -21,11 +21,11 @@
 				<h2>Your {{list_name}} List Items</h2>
 				<ul class="list">
 				{% for item in items%}
-					<li><a class="item">{{ item }}</a><a class="side" href="/updatelistitem">edit</a><a class="side" href="/delete/{{list_name}}/{{ item }}">delete</a></li>
+					<li><a class="item">{{ item }}</a><a class="side" href="/updatelistitem/{{list_name}}/{{ item }}">edit</a><a class="side" href="/delete/{{list_name}}/{{ item }}">delete</a></li>
 				{% endfor %}
 			</ul>
            <div class="add">
-               <p><a href="/add_item">Add Item</a></p>
+               <p><a href="/add_item/{{list_name}}">Add Item</a></p>
                <p><a href="/index">Back</a></p>
         </div>
 
