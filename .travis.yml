@@ -13,7 +13,7 @@ install:
 - pip install -r requirements.txt
 
 script:
-- python pytest --cov tests/
+- nosetests tests/test_shoppinglist.py
 
 after_success:
 - coverage report
